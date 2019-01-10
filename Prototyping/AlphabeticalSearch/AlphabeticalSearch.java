@@ -11,6 +11,10 @@ public class AlphabeticalSearch
 			System.out.println(word[i]); //Debugging line
 		}
 		//Compare two words
-		System.out.println(word[0].compareTo(word[6]));
+		System.out.println(word[0] + "\t" + word[2]);
+		word[0] = word[0].toLowerCase();
+		System.out.println(word[2].compareTo(word[0]));
+		
+
 	}
 }
