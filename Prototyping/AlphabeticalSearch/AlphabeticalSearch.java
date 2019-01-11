@@ -14,7 +14,5 @@ public class AlphabeticalSearch
 		System.out.println(word[0] + "\t" + word[2]);
 		word[0] = word[0].toLowerCase();
 		System.out.println(word[2].compareTo(word[0]));
-		
-
 	}
 }
