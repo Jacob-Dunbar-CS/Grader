@@ -1,53 +1,41 @@
 public class A
 {
-	public static void main (String[] args)
+	void sorting(String lowerCaseArr[])
 	{
-		String[] word = {"The","quick","brown","fox","jumps","over","the","lazy","dog."};
-		boolean stop = false;
-		int whileNum = 0;
-		int stopCount = 0;
-		String save;
-		String[] lowerCaseWord = new String[word.length];
-		int compare;
-		
-		
-		for (int i = 0; i < word.length; i++)
+		int n = lowerCaseArr.length;
+		for (int i = 0; i < n-1; i++)
 		{
-			lowerCaseWord[i] = word[i].toLowerCase();
-		}
-		
-		while (stop == false)
-		{
-			whileNum += 1;
-			for (int i = 1; i < lowerCaseWord.length; i++)
+			for (int o = 0; o < n-i-1; o++)
 			{
-				if (lowerCaseWord[i].equals(lowerCaseWord[i-1]))
+				if (lowerCaseArr[o].compareTo(lowerCaseArr[o+1]) > 0)
 				{
-				}
-				else 
-				{
-					if (lowerCaseWord[i].compareTo(lowerCaseWord[i-1]) < 0)
-					{
-						System.out.println("\n" + lowerCaseWord[i] + "\n" + lowerCaseWord[i-1]);
-						System.out.println(lowerCaseWord[i].compareTo(lowerCaseWord[i-1]));
-						save = lowerCaseWord[i];
-						lowerCaseWord[i] = lowerCaseWord[i-1];
-						lowerCaseWord[i-1] = save;
-						stop = false;
-						System.out.println("\n" + lowerCaseWord[i] + "\n" + lowerCaseWord[i-1] + "\n");	
-					}
-					else
-					{
-
-						stop = true;
-						System.out.println("\nRan while loop " + whileNum + " times");
-						for (int a = 0; a < lowerCaseWord.length; a++)
-						{
-							System.out.println(lowerCaseWord[a]);
-						}
-					}
+					String save = lowerCaseArr[o];
+					lowerCaseArr[o] = lowerCaseArr[o+1];
+					lowerCaseArr[o+1] = save;
 				}
 			}
 		}
+	}
+	void printArray(String lowerCaseArr[])
+	{
+		int n = lowerCaseArr.length;
+		for(int i = 0; i < n; i++)
+		{
+			System.out.println(lowerCaseArr[i]);
+		}
+		System.out.println();
+	}
+	public static void main (String[] args)
+	{
+		A ob = new A();
+		String[] arr = {"The", "quick", "brown","fox", "jumps","over", "the", "lazy", "dog."};
+	String[] lowerCaseArr = new String[arr.length];
+		for (int i = 0; i < arr.length; i++)
+		{
+			lowerCaseArr[i] = arr[i].toLowerCase();
+		}
+		ob.sorting(lowerCaseArr);
+		System.out.println("Sorted array");
+		ob.printArray(lowerCaseArr);
 	}
 }
