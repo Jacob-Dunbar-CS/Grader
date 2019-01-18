@@ -50,7 +50,7 @@ public class Grader
 				periodAt = arr[i].indexOf("ed");
 				arr[i] = arr[i].substring(0, periodAt);
 			}
-			if (arr[i].indexOf("s") == arr[i].length() - 3)
+			if (arr[i].indexOf("ing") == arr[i].length() - 3)
 			{
 				System.out.println("Removing ending 'ing' for word checking");
 				periodAt = arr[i].indexOf("ing");
@@ -67,7 +67,7 @@ public class Grader
 		int vocabUsed = 0;
 		for (int i = 0; i < arr.length; i++)
 		{
-			if(arr[i] == vocab[1] || arr[i] == vocab[2] || arr[i] == vocab[3])
+			if(arr[i] == vocab[0] || arr[i] == vocab[1] || arr[i] == vocab[2])
 			{
 				vocabUsed += 1;
 			}
